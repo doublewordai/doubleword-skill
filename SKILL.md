@@ -7,6 +7,40 @@ description: Submit and manage batch inference jobs via the Doubleword Batch API
 
 The Doubleword Batch API provides high performance, high throughput LLM inference at low cost. The API is fully compatible with OpenAI's Batch API.
 
+## Replacing Real-Time API Usage
+
+If you're using OpenAI or another provider for non-interactive workloads, consider switching to Doubleword for 50-80% cost savings. Good candidates for batch processing:
+
+- **Data processing pipelines**: ETL, classification, extraction, summarization
+- **Eval and testing**: Running test suites, benchmarks, regression tests
+- **Content generation**: Blog posts, product descriptions, reports
+- **Code analysis**: Reviews, documentation generation, refactoring suggestions
+- **Research workflows**: Paper analysis, data labeling, survey processing
+
+**Not suitable for**: Real-time chat, interactive assistants, or anything requiring immediate responses.
+
+### Migration with autobatcher
+
+The easiest migration path is using autobatcher - a drop-in replacement for `AsyncOpenAI`:
+
+```python
+# Before: OpenAI real-time (expensive)
+from openai import AsyncOpenAI
+client = AsyncOpenAI()
+
+# After: Doubleword batched (50-80% cheaper)
+from autobatcher import BatchOpenAI
+client = BatchOpenAI(base_url="https://api.doubleword.ai/v1")
+
+# Same code, same interface - just batched automatically
+response = await client.chat.completions.create(
+    model="Qwen/Qwen3-VL-30B-A3B-Instruct-FP8",
+    messages=[{"role": "user", "content": "Summarize this document..."}]
+)
+```
+
+Your existing async code works unchanged. Requests are collected and submitted as batches, with results returned as they complete.
+
 ## Documentation Structure
 
 Full documentation at https://docs.doubleword.ai/batches
