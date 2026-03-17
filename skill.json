@@ -1,0 +1,16 @@
+{
+  "name": "doubleword-batch",
+  "version": "1.0.0",
+  "description": "A batch-inference helper for the Doubleword AI API",
+  "author": "Doubleword AI",
+  "homepage": "https://doubleword.ai",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/doublewordai/autobatcher"
+  },
+  "requires": {
+    "env": [
+      "DOUBLEWORD_API_KEY"
+    ]
+  }
+}
