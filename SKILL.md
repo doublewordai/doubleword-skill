@@ -41,6 +41,16 @@ response = await client.chat.completions.create(
 
 Your existing async code works unchanged. Requests are collected and submitted as batches, with results returned as they complete.
 
+## Security & Data Privacy
+
+When working with batch inference, please adhere to the following best practices to keep your data and systems secure:
+
+Data Transmission: Be aware that any data placed in the .jsonl batch files will be transmitted over the internet to `https://api.doubleword.ai` for processing.
+
+Avoid PII and Secrets: We strongly recommend that you do not include Personally Identifiable Information (PII) or sensitive system secrets (such as internal passwords, API keys, or private database URIs) in your batch requests.
+
+Use Scoped API Keys: For batch processing workloads, generate and use a scoped or limited-privilege API key specifically dedicated to this task, rather than your master account key. This reduces your risk exposure if the key is ever compromised.
+
 ## Documentation Structure
 
 Full documentation at https://docs.doubleword.ai/batches
@@ -75,8 +85,14 @@ https://api.doubleword.ai/v1
 
 | Model | 24hr Input | 24hr Output |
 |-------|------------|-------------|
+| nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-NVFP4 | $0.00/1M | $0.00/1M |
+| Qwen/Qwen3.5-9B | $0.03/1M | $0.29/1M |
+| Qwen/Qwen3.5-35B-A3B-FP8 | $0.05/1M | $0.20/1M |
+| Qwen/Qwen3-14B-FP8 | $0.02/1M | $0.20/1M |
+| Qwen/Qwen3.5-397B-A17B-FP8 | $0.15/1M | $1.20/1M |
 | Qwen/Qwen3-VL-30B-A3B-Instruct-FP8 | $0.05/1M | $0.20/1M |
 | Qwen/Qwen3-VL-235B-A22B-Instruct-FP8 | $0.10/1M | $0.40/1M |
+| openai/gpt-oss-20b | $0.02/1M | $0.15/1M |
 
 SLA options: `24h` (cheapest), `1h` (faster)
 
