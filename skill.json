@@ -1,0 +1,16 @@
+{
+  "name": "doubleword",
+  "version": "2.0.0",
+  "description": "High-performance LLM inference (realtime, async, batch) and CLI tools via the Doubleword platform",
+  "author": "Doubleword AI",
+  "homepage": "https://doubleword.ai",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/doublewordai/batch-skill"
+  },
+  "requires": {
+    "env": [
+      "DOUBLEWORD_API_KEY"
+    ]
+  }
+}

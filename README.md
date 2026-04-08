@@ -1,6 +1,6 @@
-# Doubleword Batch API Skill
+# Doubleword Inference Skill
 
-A skill for AI coding agents that teaches them how to work with the Doubleword Batch API for high-throughput, low-cost LLM inference.
+A skill for AI coding agents that teaches them how to work with the Doubleword platform for high-performance LLM inference and CLI tooling.
 
 ## What is a Skill?
 
@@ -8,11 +8,11 @@ Skills are reusable capabilities for AI agents. They provide procedural knowledg
 
 This skill covers:
 
-- Submitting batch jobs via the Doubleword API
-- Monitoring batch status and downloading results
-- Using the autobatcher Python client
+- Three inference modes: realtime, async (autobatcher), and batch
+- 10+ models across text generation, OCR, and embeddings
+- The `dw` CLI for batch workflows, streaming, and local file tools
 - Tool calling and structured outputs
-- Available models and pricing
+- Model pricing across Realtime, High (1h), and Standard (24h) tiers
 
 ## Installation
 
@@ -38,15 +38,17 @@ This skill works with AI coding agents including:
 
 Once installed, you can ask your AI agent questions like:
 
-- "How do I submit a batch job to Doubleword?"
-- "Show me how to check batch status"
-- "Help me download partial results"
+- "How do I use Doubleword for realtime inference?"
+- "Set up autobatcher to batch my API calls automatically"
+- "Help me submit a batch job and download results"
 - "What models are available and what do they cost?"
+- "Show me how to use the dw CLI to process a JSONL file"
+- "How do I use structured outputs with Doubleword?"
 
 ## Updating
 
 ```bash tabs=update name=Skills sync=method
-npx skills update doubleword-batch
+npx skills update doubleword
 ```
 
 ```bash tabs=update name=Git sync=method
@@ -56,7 +58,8 @@ cd ~/.claude/skills/batch-skill && git pull
 ## Links
 
 - [GitHub Repository](https://github.com/doublewordai/batch-skill)
-- [Doubleword Batch API Docs](https://docs.doubleword.ai/batches)
+- [Doubleword Inference API Docs](https://docs.doubleword.ai/inference-api)
+- [Doubleword CLI Docs](https://docs.doubleword.ai/dw-cli)
 - [Doubleword Console](https://app.doubleword.ai)
 - [Skills CLI](https://github.com/skills-sh/skills)
 
