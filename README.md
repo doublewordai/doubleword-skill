@@ -9,7 +9,7 @@ Skills are reusable capabilities for AI agents. They provide procedural knowledg
 This skill covers:
 
 - Three inference modes: realtime, async (autobatcher), and batch
-- 10+ models across text generation, OCR, and embeddings
+- 12 models across text generation, vision, OCR, and embeddings
 - The `dw` CLI for batch workflows, streaming, and local file tools
 - Tool calling and structured outputs
 - Model pricing across Realtime, High (1h), and Standard (24h) tiers

@@ -5,7 +5,7 @@ description: High-performance LLM inference (realtime, async, batch) and CLI too
 
 # Doubleword Inference API
 
-The Doubleword platform provides high-performance LLM inference with an OpenAI-compatible API. It offers three inference modes, 10+ models across text generation, OCR, and embeddings, and a full CLI (`dw`) for managing workflows from the terminal.
+The Doubleword platform provides high-performance LLM inference with an OpenAI-compatible API. It offers three inference modes, 12 models across text generation, vision, OCR, and embeddings, and a full CLI (`dw`) for managing workflows from the terminal.
 
 ## Three Inference Modes
 
@@ -65,6 +65,8 @@ https://api.doubleword.ai/v1
 | Qwen/Qwen3.5-9B | $0.08 / $0.70 | $0.04 / $0.35 | $0.03 / $0.29 |
 | Qwen/Qwen3-14B-FP8 | $0.05 / $0.60 | $0.03 / $0.30 | $0.02 / $0.20 |
 | Qwen/Qwen3.5-35B-A3B-FP8 | $0.25 / $2.00 | $0.07 / $0.30 | $0.05 / $0.20 |
+| Qwen/Qwen3-VL-30B-A3B-Instruct-FP8 | $0.16 / $0.80 | $0.07 / $0.30 | $0.05 / $0.20 |
+| Qwen/Qwen3-VL-235B-A22B-Instruct-FP8 | $0.60 / $1.20 | $0.15 / $0.55 | $0.10 / $0.40 |
 | Qwen/Qwen3.5-397B-A17B | $0.60 / $3.60 | $0.30 / $1.80 | $0.15 / $1.20 |
 | nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-NVFP4 | $0.30 / $0.75 | $0.23 / $0.56 | $0.15 / $0.38 |
 | openai/gpt-oss-20b | $0.04 / $0.30 | $0.03 / $0.20 | $0.02 / $0.15 |
