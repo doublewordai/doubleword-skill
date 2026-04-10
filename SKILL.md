@@ -20,33 +20,53 @@ The Doubleword platform provides high-performance LLM inference with an OpenAI-c
 
 Full docs at https://docs.doubleword.ai/inference-api and https://docs.doubleword.ai/dw-cli
 
-For raw markdown (recommended for AI agents), append `.md` to any URL:
+For raw markdown (recommended for AI agents), append `.md` to Inference API URLs.
 
 **Inference API**
 - Overview: `https://docs.doubleword.ai/inference-api.md`
 - Getting started: `https://docs.doubleword.ai/inference-api/intro-to-doubleword-inference.md`
 - Model pricing: `https://docs.doubleword.ai/inference-api/model-pricing.md`
-- Batch API guide: `https://docs.doubleword.ai/inference-api/getting-started-with-batched-api.md`
+- Realtime inference: `https://docs.doubleword.ai/inference-api/realtime-inference.md`
+- Async inference (autobatcher): `https://docs.doubleword.ai/inference-api/async-inference.md`
+- Batch inference: `https://docs.doubleword.ai/inference-api/batch-inference.md`
+- Batch notifications & webhooks: `https://docs.doubleword.ai/inference-api/batch-notifications-and-webhooks.md`
 - Creating an API key: `https://docs.doubleword.ai/inference-api/creating-an-api-key.md`
 - Tool calling & structured outputs: `https://docs.doubleword.ai/inference-api/tool-calling.md`
 - autobatcher: `https://docs.doubleword.ai/inference-api/autobatcher.md`
 - JSONL files: `https://docs.doubleword.ai/inference-api/jsonl-files.md`
+- API reference (OpenAPI): `https://docs.doubleword.ai/inference-api/api-reference.md`
 
 **CLI**
-- Overview: `https://docs.doubleword.ai/dw-cli.md`
-- Installation: `https://docs.doubleword.ai/dw-cli/installation.md`
-- Authentication: `https://docs.doubleword.ai/dw-cli/authentication.md`
-- Quickstart: `https://docs.doubleword.ai/dw-cli/quickstart.md`
-- Batch processing: `https://docs.doubleword.ai/dw-cli/batches.md`
-- Streaming results: `https://docs.doubleword.ai/dw-cli/streaming.md`
-- Realtime inference: `https://docs.doubleword.ai/dw-cli/realtime.md`
-- Local file tools: `https://docs.doubleword.ai/dw-cli/file-tools.md`
-- Project system: `https://docs.doubleword.ai/dw-cli/projects.md`
-- Command reference: `https://docs.doubleword.ai/dw-cli/commands.md`
+- Introduction: `https://docs.doubleword.ai/dw-cli/introduction`
+- Installation: `https://docs.doubleword.ai/dw-cli/installation`
+- Authentication: `https://docs.doubleword.ai/dw-cli/authentication`
+- Quickstart: `https://docs.doubleword.ai/dw-cli/quickstart`
+- Batch processing: `https://docs.doubleword.ai/dw-cli/batches`
+- Streaming results: `https://docs.doubleword.ai/dw-cli/streaming`
+- Realtime inference: `https://docs.doubleword.ai/dw-cli/realtime`
+- JSONL format: `https://docs.doubleword.ai/dw-cli/jsonl-format`
+- Local file tools: `https://docs.doubleword.ai/dw-cli/file-tools`
+- Project system: `https://docs.doubleword.ai/dw-cli/projects`
+- Examples: `https://docs.doubleword.ai/dw-cli/examples`
+- Command reference: `https://docs.doubleword.ai/dw-cli/commands`
+- Accounts: `https://docs.doubleword.ai/dw-cli/accounts`
+- Keys & webhooks: `https://docs.doubleword.ai/dw-cli/keys-webhooks`
+- Usage: `https://docs.doubleword.ai/dw-cli/usage`
+- Global flags: `https://docs.doubleword.ai/dw-cli/global-flags`
 
-**Examples**
-- Research paper digest: `https://docs.doubleword.ai/inference-api/research-summaries.md`
-- Semantic search without embeddings: `https://docs.doubleword.ai/inference-api/semantic-search-without-embeddings.md`
+**Workbooks (examples)**
+- CLI examples: `https://docs.doubleword.ai/inference-api/cli-examples`
+- Async agents: `https://docs.doubleword.ai/inference-api/async-agents`
+- Data processing pipelines: `https://docs.doubleword.ai/inference-api/data-processing-pipelines`
+- Structured extraction: `https://docs.doubleword.ai/inference-api/structured-extraction`
+- Semantic search without embeddings: `https://docs.doubleword.ai/inference-api/semantic-search-without-embeddings`
+- Research paper digest: `https://docs.doubleword.ai/inference-api/research-summaries`
+- Image summarization: `https://docs.doubleword.ai/inference-api/image-summarization`
+- Embeddings: `https://docs.doubleword.ai/inference-api/embeddings`
+- Model evals: `https://docs.doubleword.ai/inference-api/model-evals`
+- Synthetic data generation: `https://docs.doubleword.ai/inference-api/synthetic-data-generation`
+- Dataset compilation: `https://docs.doubleword.ai/inference-api/dataset-compilation`
+- Bug detection ensemble: `https://docs.doubleword.ai/inference-api/bug-detection-ensemble`
 
 ## Quick Reference
 
