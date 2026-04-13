@@ -6,7 +6,7 @@
   "homepage": "https://doubleword.ai",
   "repository": {
     "type": "git",
-    "url": "https://github.com/doublewordai/batch-skill"
+    "url": "https://github.com/doublewordai/doubleword-skill"
   },
   "requires": {
     "env": [

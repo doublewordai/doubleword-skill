@@ -12,16 +12,16 @@ This skill covers:
 - 12 models across text generation, vision, OCR, and embeddings
 - The `dw` CLI for batch workflows, streaming, and local file tools
 - Tool calling and structured outputs
-- Model pricing across Realtime, High (1h), and Standard (24h) tiers
+- Model pricing across realtime, async, and batch tiers
 
 ## Installation
 
 ```bash tabs=install name=Skills sync=method
-npx skills add https://github.com/doublewordai/batch-skill
+npx skills add https://github.com/doublewordai/doubleword-skill
 ```
 
 ```bash tabs=install name=Git sync=method
-git clone https://github.com/doublewordai/batch-skill
+git clone https://github.com/doublewordai/doubleword-skill
 ```
 
 ## Supported Agents
@@ -52,12 +52,12 @@ npx skills update doubleword
 ```
 
 ```bash tabs=update name=Git sync=method
-cd ~/.claude/skills/batch-skill && git pull
+cd ~/.claude/skills/doubleword-skill && git pull
 ```
 
 ## Links
 
-- [GitHub Repository](https://github.com/doublewordai/batch-skill)
+- [GitHub Repository](https://github.com/doublewordai/doubleword-skill)
 - [Doubleword Inference API Docs](https://docs.doubleword.ai/inference-api)
 - [Doubleword CLI Docs](https://docs.doubleword.ai/dw-cli)
 - [Doubleword Console](https://app.doubleword.ai)
