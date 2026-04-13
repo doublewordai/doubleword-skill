@@ -80,8 +80,8 @@ https://api.doubleword.ai/v1
 
 #### Text Generation
 
-| Model | Realtime (in/out) | High 1h (in/out) | Standard 24h (in/out) |
-|-------|-------------------|-------------------|------------------------|
+| Model | Realtime (in/out) | Async (in/out) | Batch (in/out) |
+|-------|-------------------|----------------|----------------|
 | Qwen/Qwen3.5-4B | — | $0.05 / $0.08 | $0.04 / $0.06 |
 | Qwen/Qwen3.5-9B | $0.08 / $0.70 | $0.04 / $0.35 | $0.03 / $0.29 |
 | Qwen/Qwen3-14B-FP8 | $0.05 / $0.60 | $0.03 / $0.30 | $0.02 / $0.20 |
@@ -92,19 +92,19 @@ https://api.doubleword.ai/v1
 | nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-NVFP4 | $0.30 / $0.75 | $0.23 / $0.56 | $0.15 / $0.38 |
 | openai/gpt-oss-20b | $0.04 / $0.30 | $0.03 / $0.20 | $0.02 / $0.15 |
 
-Prices per 1M tokens.
+Prices per 1M tokens. Async and batch pricing correspond to `completion_window` values of `"1h"` and `"24h"` respectively in the API.
 
 #### OCR Models
 
-| Model | High 1h (in/out) | Standard 24h (in/out) |
-|-------|-------------------|------------------------|
+| Model | Async (in/out) | Batch (in/out) |
+|-------|----------------|----------------|
 | allenai/olmOCR-2-7B-1025-FP8 | $0.15 / $0.15 | $0.10 / $0.10 |
 | lightonai/LightOnOCR-2-1B-bbox-soup | $0.08 / $0.08 | $0.05 / $0.05 |
 
 #### Embedding Model
 
-| Model | Realtime (input) | High 1h (input) | Standard 24h (input) |
-|-------|------------------|------------------|----------------------|
+| Model | Realtime (input) | Async (input) | Batch (input) |
+|-------|------------------|---------------|---------------|
 | Qwen/Qwen3-Embedding-8B | $0.04 | $0.03 | $0.02 |
 
 ### Limits
@@ -167,7 +167,7 @@ pip install autobatcher
 | `batch_size` | 1000 | Submit when this many requests queue |
 | `batch_window_seconds` | 10.0 | Submit after this many seconds |
 | `poll_interval_seconds` | 5.0 | Polling frequency for batch completion |
-| `completion_window` | `"24h"` | Batch completion SLA (`"24h"` or `"1h"`) |
+| `completion_window` | `"24h"` | `"24h"` for batch pricing, `"1h"` for async pricing |
 
 ### Supported Endpoints
 
@@ -265,7 +265,7 @@ batch_file = client.files.create(
 batch = client.batches.create(
     input_file_id=batch_file.id,
     endpoint="/v1/chat/completions",
-    completion_window="24h",  # or "1h"
+    completion_window="24h",  # "24h" for batch pricing, "1h" for async pricing
     metadata={"description": "my batch job"}
 )
 ```
@@ -359,7 +359,7 @@ dw stream batch.jsonl > results.jsonl
 # Override model
 dw stream batch.jsonl --model Qwen/Qwen3.5-397B-A17B > results.jsonl
 
-# Priority processing
+# Async pricing (1h completion window)
 dw stream batch.jsonl --completion-window 1h > results.jsonl
 
 # Process all files in a directory
@@ -374,7 +374,7 @@ dw batches run batch.jsonl --watch
 
 # Step-by-step
 dw files upload batch.jsonl
-dw batches create --file file-abc123 --completion-window 1h
+dw batches create --file file-abc123 --completion-window 1h  # or 24h (default)
 
 # Monitor
 dw batches watch batch-abc123
@@ -483,7 +483,7 @@ response = client.chat.completions.create(
 1. **Partial results**: Download results as they complete, don't wait for entire batch
 2. **Resumable downloads**: Use `X-Last-Line` header with `?offset=` to resume
 3. **Output file created immediately**: `output_file_id` available right after batch creation
-4. **Three service tiers**: Realtime (immediate), High/1h (priority batch), Standard/24h (cheapest batch)
+4. **Three inference modes**: Realtime (immediate), async (`completion_window="1h"`), batch (`completion_window="24h"`)
 5. **Cost estimation**: Upload files to the Console for pre-submission cost estimates, or use `dw files cost-estimate`
 
 ## Security & Data Privacy
