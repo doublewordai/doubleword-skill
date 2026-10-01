@@ -1,7 +1,7 @@
 {
   "name": "doubleword",
-  "version": "2.0.0",
-  "description": "High-performance LLM inference (realtime, async, batch) and CLI tools via the Doubleword platform",
+  "version": "3.0.0",
+  "description": "Route Doubleword LLM inference and data-processing jobs across realtime, async, and batch tiers using the dw CLI or OpenAI-compatible API",
   "author": "Doubleword AI",
   "homepage": "https://doubleword.ai",
   "repository": {
