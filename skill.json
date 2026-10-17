@@ -1,6 +1,6 @@
 {
   "name": "doubleword",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Route Doubleword LLM inference and data-processing jobs across realtime, async, and batch tiers using the dw CLI or OpenAI-compatible API",
   "author": "Doubleword AI",
   "homepage": "https://doubleword.ai",

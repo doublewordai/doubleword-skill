@@ -36,11 +36,11 @@ only the inference key and does not enable admin API commands. In that mode,
 validate the payload locally and run a cheap, non-interactive realtime
 inference probe before uploading or submitting jobs:
 
-The readiness probe defaults to `openai/gpt-oss-20b`, the lowest-cost available
+The readiness probe defaults to `deepseek-ai/DeepSeek-V4-Flash-0731`, the lowest-cost available
 realtime model; set `MODEL` first to override it.
 
 ```bash
-MODEL="${MODEL:-openai/gpt-oss-20b}"
+MODEL="${MODEL:-deepseek-ai/DeepSeek-V4-Flash-0731}"
 dw files validate path/to/dataset.jsonl
 dw files stats path/to/dataset.jsonl
 dw realtime "$MODEL" "Reply with OK." --temperature 0 --max-tokens 2 --no-stream
@@ -52,7 +52,7 @@ inference key works against Doubleword. Always pass a prompt argument or pipe a
 tiny prompt so the probe cannot block waiting for input:
 
 ```bash
-MODEL="${MODEL:-openai/gpt-oss-20b}"
+MODEL="${MODEL:-deepseek-ai/DeepSeek-V4-Flash-0731}"
 printf 'Reply with OK.\n' | dw realtime "$MODEL" --temperature 0 --max-tokens 2 --no-stream
 ```
 
@@ -285,7 +285,7 @@ client = AsyncOpenAI(
 )
 
 response = await client.chat.completions.create(
-    model="openai/gpt-oss-20b",
+    model="deepseek-ai/DeepSeek-V4-Flash-0731",
     messages=[{"role": "user", "content": "Explain batch inference briefly."}],
 )
 ```
@@ -314,7 +314,7 @@ client = OpenAI(
 )
 
 response = client.chat.completions.create(
-    model="openai/gpt-oss-20b",
+    model="deepseek-ai/DeepSeek-V4-Flash-0731",
     messages=[
         {
             "role": "system",

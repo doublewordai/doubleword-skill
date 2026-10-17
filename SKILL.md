@@ -1,7 +1,7 @@
 ---
 name: doubleword
 description: Route Doubleword LLM inference and data-processing jobs across realtime, async, and batch tiers using the dw CLI or OpenAI-compatible API.
-version: 3.0.0
+version: 3.0.1
 platforms: [linux, macos]
 metadata:
   hermes:
@@ -115,7 +115,7 @@ See `references/cli-recipes.md` for a minimal Chat Completions marker example.
    - with headless/API-key login, `dw whoami` may fail because it requires the
      admin API; instead, run local file validation plus a non-interactive,
      token-limited realtime probe such as
-     `MODEL="${MODEL:-openai/gpt-oss-20b}"; dw realtime "$MODEL" "Reply with OK." --temperature 0 --max-tokens 2 --no-stream`
+     `MODEL="${MODEL:-deepseek-ai/DeepSeek-V4-Flash-0731}"; dw realtime "$MODEL" "Reply with OK." --temperature 0 --max-tokens 2 --no-stream`
      before upload and stop if the inference probe fails.
 2. Classify the task:
    - Realtime: single prompt, interactive lookup, or explicit immediate result.
@@ -142,6 +142,10 @@ See `references/cli-recipes.md` for a minimal Chat Completions marker example.
    - for headless/API-key agents, skip CLI listing and fetch the two `llms.txt`
      indexes (and the models pages they index) instead of inventing IDs from
      the snapshot table;
+   - never pick, or keep reusing, a model listed under
+     `https://docs.doubleword.ai/inference-api/models#scheduled-for-deprecation`;
+     when an existing script or job names one, switch to its listed
+     replacement (also summarized in `references/models-and-pricing.md`);
    - use specialized OCR or embedding models for those task types;
    - otherwise choose the cheapest capable model;
    - load `references/models-and-pricing.md` only as a selection heuristic /
