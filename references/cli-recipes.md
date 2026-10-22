@@ -263,8 +263,8 @@ Keep SDK credentials in environment variables. Do not hard-code or print them.
 
 ## Autobatcher (Python)
 
-Use Autobatcher when the user wants normal async OpenAI-style calls that
-automatically batch for async or batch pricing. Fetch the live docs first:
+Use Autobatcher when the user wants normal async OpenAI-style calls at async or
+batch pricing. Fetch the live docs first:
 
 `https://docs.doubleword.ai/inference-api/autobatcher.md`
 
@@ -290,7 +290,9 @@ response = await client.chat.completions.create(
 )
 ```
 
-Swap `AsyncOpenAI` for `BatchOpenAI` for bulk lowest-cost workloads. Do not use
+This runs on the async (flex) tier, and so does `BatchOpenAI` by default. For
+bulk lowest-cost workloads, pass `completion_window="24h"` to send real 24h
+batch jobs. Do not use
 Autobatcher for interactive realtime prompts; use `dw realtime` or the standard
 OpenAI client for those.
 
