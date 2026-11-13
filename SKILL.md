@@ -68,8 +68,11 @@ or batch pricing (without hand-writing JSONL), use Autobatcher:
 - Live docs: fetch `https://docs.doubleword.ai/inference-api/autobatcher.md`
   before inventing APIs or options
 
-Prefer `AsyncOpenAI` from `autobatcher` for same-session async work, and
-`BatchOpenAI` for bulk lowest-cost jobs. Point `base_url` at
+`AsyncOpenAI` and `BatchOpenAI` from `autobatcher` both send text calls to the
+async (flex) tier by default, as background Responses requests that the client
+polls. Use either for same-session async work. For bulk lowest-cost jobs, pass
+`completion_window="24h"` to get real 24h Batch API jobs. Flex drops
+`cache_control` markers; the 24h path keeps them. Point `base_url` at
 `https://api.doubleword.ai/v1`. See `references/cli-recipes.md` for a minimal
 Python pattern. Keep preferring `dw` for explicit JSONL file/batch workflows.
 
@@ -127,7 +130,8 @@ See `references/cli-recipes.md` for a minimal Chat Completions marker example.
    - Async with a 1h completion window for same-session background work;
    - Batch with a 24h completion window for lowest-cost large jobs.
    - Async can also be requested straight from code with `service_tier: "flex"`
-     and `background: true` on the Responses API, then polled. Fetch
+     and `background: true` on the Responses API, then polled, or through
+     Autobatcher's default mode. Fetch
      `https://docs.doubleword.ai/inference-api/async-inference.md` before
      writing that code.
 4. Select a model:
